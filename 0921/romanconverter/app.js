@@ -14,13 +14,21 @@ const ROMAN_NUMERALS = [
   { value: 1, symbol: "I" },
 ];
 
-function convertToRoman(num) {
+const MIN_VALUE = 1;
+const MAX_VALUE = 3999;
+
+function validateInput(num) {
   if (!Number.isInteger(num)) {
     throw new TypeError("A bemenetnek egész számnak kell lennie: " + num);
   }
-  if (num < 1 || num > 3999) {
-    throw new RangeError("A szám 1 és 3999 között lehet: " + num);
+  if (num < MIN_VALUE || num > MAX_VALUE) {
+    throw new RangeError("A szám " + MIN_VALUE + " és " + MAX_VALUE + " között lehet: " + num);
   }
+}
+
+function convertToRoman(num) {
+  validateInput(num);
+
   let result = "";
   for (const { value, symbol } of ROMAN_NUMERALS) {
     while (num >= value) {
