@@ -15,6 +15,9 @@ const ROMAN_NUMERALS = [
 ];
 
 function convertToRoman(num) {
+  if (!Number.isInteger(num)) {
+    throw new TypeError("A bemenetnek egész számnak kell lennie: " + num);
+  }
   if (num < 1 || num > 3999) {
     throw new RangeError("A szám 1 és 3999 között lehet: " + num);
   }
