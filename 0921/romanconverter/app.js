@@ -1,6 +1,6 @@
 function convertToRoman(num) {
   let result = "";
-  if (num >= 10) {
+  while (num >= 10) {
     result += "X";
     num -= 10;
   }
