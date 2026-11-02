@@ -1,5 +1,5 @@
 function convertToRoman(num) {
-  return "I";
+  return "I".repeat(num);
 }
 
 if (typeof module !== "undefined" && module.exports) {
