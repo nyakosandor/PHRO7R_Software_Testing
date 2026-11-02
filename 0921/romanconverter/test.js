@@ -67,3 +67,10 @@ QUnit.test("Határértékek és összetett számok", (assert) => {
   assert.strictEqual(convertToRoman(444), "CDXLIV", "csupa kivonásos alak");
   assert.strictEqual(convertToRoman(2024), "MMXXIV");
 });
+
+QUnit.test("Tartományon kívüli egész számok -> RangeError", (assert) => {
+  assert.throws(() => convertToRoman(0), RangeError, "0");
+  assert.throws(() => convertToRoman(-1), RangeError, "-1");
+  assert.throws(() => convertToRoman(-100), RangeError, "-100");
+  assert.throws(() => convertToRoman(4000), RangeError, "4000");
+});
