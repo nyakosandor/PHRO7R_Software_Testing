@@ -3,3 +3,7 @@ if (typeof require !== "undefined") {
 }
 
 QUnit.module("convertToRoman");
+
+QUnit.test("1 -> I", (assert) => {
+  assert.strictEqual(convertToRoman(1), "I");
+});
