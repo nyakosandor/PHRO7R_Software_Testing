@@ -74,3 +74,13 @@ QUnit.test("Tartományon kívüli egész számok -> RangeError", (assert) => {
   assert.throws(() => convertToRoman(-100), RangeError, "-100");
   assert.throws(() => convertToRoman(4000), RangeError, "4000");
 });
+
+QUnit.test("Nem egész szám bemenet -> TypeError", (assert) => {
+  assert.throws(() => convertToRoman(1.5), TypeError, "tört szám");
+  assert.throws(() => convertToRoman(NaN), TypeError, "NaN");
+  assert.throws(() => convertToRoman(Infinity), TypeError, "Infinity");
+  assert.throws(() => convertToRoman("10"), TypeError, "szöveg");
+  assert.throws(() => convertToRoman(null), TypeError, "null");
+  assert.throws(() => convertToRoman(undefined), TypeError, "undefined");
+  assert.throws(() => convertToRoman(), TypeError, "paraméter nélkül");
+});
