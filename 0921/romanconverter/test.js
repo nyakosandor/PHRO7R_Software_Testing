@@ -41,3 +41,11 @@ QUnit.test("40 -> XL, 50 -> L, 58 -> LVIII, 90 -> XC, 99 -> XCIX", (assert) => {
   assert.strictEqual(convertToRoman(90), "XC");
   assert.strictEqual(convertToRoman(99), "XCIX");
 });
+
+QUnit.test("100 -> C, 400 -> CD, 500 -> D, 900 -> CM, 1000 -> M", (assert) => {
+  assert.strictEqual(convertToRoman(100), "C");
+  assert.strictEqual(convertToRoman(400), "CD");
+  assert.strictEqual(convertToRoman(500), "D");
+  assert.strictEqual(convertToRoman(900), "CM");
+  assert.strictEqual(convertToRoman(1000), "M");
+});
