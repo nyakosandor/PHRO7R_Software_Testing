@@ -4,6 +4,10 @@ function convertToRoman(num) {
     result += "V";
     num -= 5;
   }
+  if (num === 4) {
+    result += "IV";
+    num -= 4;
+  }
   return result + "I".repeat(num);
 }
 
