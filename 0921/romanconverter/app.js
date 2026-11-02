@@ -15,6 +15,9 @@ const ROMAN_NUMERALS = [
 ];
 
 function convertToRoman(num) {
+  if (num < 1 || num > 3999) {
+    throw new RangeError("A szám 1 és 3999 között lehet: " + num);
+  }
   let result = "";
   for (const { value, symbol } of ROMAN_NUMERALS) {
     while (num >= value) {
