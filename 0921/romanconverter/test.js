@@ -12,3 +12,9 @@ QUnit.test("2 és 3 -> az I ismétlése", (assert) => {
   assert.strictEqual(convertToRoman(2), "II");
   assert.strictEqual(convertToRoman(3), "III");
 });
+
+QUnit.test("5 -> V, 6 -> VI, 8 -> VIII", (assert) => {
+  assert.strictEqual(convertToRoman(5), "V");
+  assert.strictEqual(convertToRoman(6), "VI");
+  assert.strictEqual(convertToRoman(8), "VIII");
+});
