@@ -33,3 +33,11 @@ QUnit.test("14 -> XIV, 20 -> XX, 39 -> XXXIX (X ismétlése)", (assert) => {
   assert.strictEqual(convertToRoman(20), "XX");
   assert.strictEqual(convertToRoman(39), "XXXIX");
 });
+
+QUnit.test("40 -> XL, 50 -> L, 58 -> LVIII, 90 -> XC, 99 -> XCIX", (assert) => {
+  assert.strictEqual(convertToRoman(40), "XL");
+  assert.strictEqual(convertToRoman(50), "L");
+  assert.strictEqual(convertToRoman(58), "LVIII");
+  assert.strictEqual(convertToRoman(90), "XC");
+  assert.strictEqual(convertToRoman(99), "XCIX");
+});
