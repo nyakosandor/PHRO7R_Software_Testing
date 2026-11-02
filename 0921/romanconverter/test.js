@@ -49,3 +49,21 @@ QUnit.test("100 -> C, 400 -> CD, 500 -> D, 900 -> CM, 1000 -> M", (assert) => {
   assert.strictEqual(convertToRoman(900), "CM");
   assert.strictEqual(convertToRoman(1000), "M");
 });
+
+QUnit.test("A specifikáció példái", (assert) => {
+  assert.strictEqual(convertToRoman(1), "I");
+  assert.strictEqual(convertToRoman(4), "IV");
+  assert.strictEqual(convertToRoman(9), "IX");
+  assert.strictEqual(convertToRoman(14), "XIV");
+  assert.strictEqual(convertToRoman(58), "LVIII");
+  assert.strictEqual(convertToRoman(1994), "MCMXCIV");
+  assert.strictEqual(convertToRoman(3999), "MMMCMXCIX");
+});
+
+QUnit.test("Határértékek és összetett számok", (assert) => {
+  assert.strictEqual(convertToRoman(1), "I", "alsó határ");
+  assert.strictEqual(convertToRoman(3999), "MMMCMXCIX", "felső határ");
+  assert.strictEqual(convertToRoman(3888), "MMMDCCCLXXXVIII", "leghosszabb alak");
+  assert.strictEqual(convertToRoman(444), "CDXLIV", "csupa kivonásos alak");
+  assert.strictEqual(convertToRoman(2024), "MMXXIV");
+});
