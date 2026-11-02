@@ -22,3 +22,8 @@ QUnit.test("5 -> V, 6 -> VI, 8 -> VIII", (assert) => {
 QUnit.test("4 -> IV (kivonásos alak)", (assert) => {
   assert.strictEqual(convertToRoman(4), "IV");
 });
+
+QUnit.test("9 -> IX, 10 -> X", (assert) => {
+  assert.strictEqual(convertToRoman(9), "IX");
+  assert.strictEqual(convertToRoman(10), "X");
+});
