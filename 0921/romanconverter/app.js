@@ -1,5 +1,13 @@
 function convertToRoman(num) {
   let result = "";
+  if (num >= 10) {
+    result += "X";
+    num -= 10;
+  }
+  if (num === 9) {
+    result += "IX";
+    num -= 9;
+  }
   if (num >= 5) {
     result += "V";
     num -= 5;
