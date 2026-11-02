@@ -27,3 +27,9 @@ QUnit.test("9 -> IX, 10 -> X", (assert) => {
   assert.strictEqual(convertToRoman(9), "IX");
   assert.strictEqual(convertToRoman(10), "X");
 });
+
+QUnit.test("14 -> XIV, 20 -> XX, 39 -> XXXIX (X ismétlése)", (assert) => {
+  assert.strictEqual(convertToRoman(14), "XIV");
+  assert.strictEqual(convertToRoman(20), "XX");
+  assert.strictEqual(convertToRoman(39), "XXXIX");
+});
